@@ -1,6 +1,6 @@
 require 'securerandom'
 class Person
-  # Atributos de instancia
+  # Instance attributes
   attr_accessor :name, :age
   attr_reader :id
 
@@ -11,14 +11,14 @@ class Person
     @parent_permission = parent_permission
   end
 
-  # Método privado
+  # Private Method
   private
 
   def of_age?
     @age >= 18
   end
 
-  # Método público
+  # Public Method
   public
 
   def can_use_services?
