@@ -23,7 +23,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [SChool Library] <a name="about-project"></a>
+# 📖 [School Library] <a name="about-project"></a>
 
 > This repository allows you to interact with some classes and their linked features in order to see how a school library works.
 
