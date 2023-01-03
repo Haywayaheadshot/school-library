@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Morse code message Decoder\] ](#-morse-code-message-decoder-)
+- [📖 \[school-library\] ](#school-library)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack Server side](#tech-stack-server-side)
     - [Key Features ](#key-features-)
@@ -27,7 +27,7 @@
 
 > This repository allows you to interact with some classes and their linked features in order to see how a school library works.
 
-**[your_project__name]** Morse code message Decoder
+**[school-library]** School Library
 ## 🛠 Built With <a name="built-with"></a>
 - Ruby
 
