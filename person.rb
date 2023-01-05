@@ -1,5 +1,9 @@
 require 'securerandom'
-class Person
+require './nameable'
+require './capitalize'
+require './trimmer_decorator'
+
+class Person < Nameable
   # Instance attributes
   attr_accessor :name, :age
   attr_reader :id
@@ -9,6 +13,7 @@ class Person
     @name = name
     @age = age
     @parent_permission = parent_permission
+    super()
   end
 
   # Private Method
@@ -24,7 +29,15 @@ class Person
   def can_use_services?
     of_age? || @parent_permission
   end
+
+  def correct_name
+    @name
+  end
 end
 
-person = Person.new(10, 'juan', false)
-puts person
+person = Person.new(22, 'maximilianus')
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+puts capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+puts capitalized_trimmed_person.correct_name
