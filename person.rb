@@ -6,7 +6,7 @@ require './rental'
 
 class Person < Nameable
   # Instance attributes
-  attr_accessor :name, :age, :rental
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def initialize(age = 10, name = 'Unknown', parent_permission: true)
