@@ -1,5 +1,7 @@
 require 'securerandom'
-class Person
+require './nameable'
+
+class Person < Nameable
   # Instance attributes
   attr_accessor :name, :age
   attr_reader :id
@@ -24,7 +26,8 @@ class Person
   def can_use_services?
     of_age? || @parent_permission
   end
-end
 
-person = Person.new(10, 'juan', false)
-puts person
+  def correct_name
+    @name
+  end
+end
