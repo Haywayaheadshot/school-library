@@ -39,9 +39,9 @@ class App
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
     creation = gets.chomp.to_i
     if [1, 2].include?(creation)
-      print 'Please input Name:'
+      print 'Please input Name: '
       name = gets.chomp
-      print 'Please input Age:'
+      print 'Please input Age: '
       age = gets.chomp
       case creation
       when 1
