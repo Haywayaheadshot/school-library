@@ -79,15 +79,34 @@ class App
         Book.all.each_with_index { |book, index|
             puts '#{index} Title: #{book.title}, Author: #{book.author}'
         }
-        chosen_book = gets.chomp
+        chosen_book = gets.chomp.to_i
         Student.all.each_with_index { |student, index|
             puts '#{index} [Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age}'
         }
+        Teacher.all.each_with_index { |teacher, index|
+          puts '#{index} [Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}'
+        }
+        selected_person = gets.chomp.to_i
+        puts 'Date: '
+        date = gets.chomp
+        Rental.new(date, Book.all[chosen_book], Person.all[selected_person])
+        puts 'Rental created succesfully'
     end
-
   end
 
   def list_all_rentals
-    puts 'Listed rentals'
+    if Person.all.empty? || Book.all.empty?
+      puts 'Pleas add a person and a book first!'
+    else
+      print 'ID of person: '
+      id_selected = gets.chomp.to_i
+      Rental.all.each { |rental|
+        if rental.person.id == id_selected
+          puts %(#{rental.date}, Book "#{rental.book.title}" by #{rental.book.author}, rented by #{rental.person.name})
+        else
+          puts 'There\'s no rental with that ID'
+        end
+      }
+    end
   end
 end
