@@ -31,7 +31,7 @@ class App
       puts %([Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age})
     end
     Teacher.all.each do |teacher|
-      puts '[Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}'
+      puts %([Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age})
     end
   end
 
