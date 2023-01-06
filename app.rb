@@ -21,14 +21,14 @@ class App
   def list_all_books
     puts 'There\'s no books added yet!' if Book.all.empty?
     Book.all.each do |book|
-      puts 'Title: #{book.title}, Author: #{book.author}'
+      puts %(Title: #{book.title}, Author: #{book.author})
     end
   end
 
   def list_all_people
     puts 'There\'s no people added yet' if Student.all.empty? && Teacher.all.empty?
     Student.all.each do |student|
-      puts '[Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age}'
+      puts %([Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age})
     end
     Teacher.all.each do |teacher|
       puts '[Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}'
