@@ -26,10 +26,14 @@ class Main
     }
 
     case par
-    when 1..6 then @app.send(@user_pick[par])
-    when 7 then puts 'Thanks for using my library!'
-    else puts 'Option doesn\'t exist ¯\_(ﾟ～ﾟ)_/¯, select another one!'
-         on_start
+    when 1..6
+      @app.send(@user_pick[par])
+      on_start
+    when 7
+      puts 'Thanks for using my library!'
+    else
+      puts 'Option doesn\'t exist ¯\_(ﾟ～ﾟ)_/¯, select another one!'
+      on_start
     end
   end
 end
