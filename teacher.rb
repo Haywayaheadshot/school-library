@@ -1,14 +1,17 @@
 require './person'
 class Teacher < Person
-  def initialize(name, age, specialization)
-    super(age, name, true)
+  attr_accessor :specialization
+
+  def initialize(age, specialization, name = 'Unknown')
+    super(age, name: name, parent_permission: true)
     @specialization = specialization
   end
 
   def can_use_services?()
     true
   end
-end
 
-teacher = Teacher.new(40, 'joaquin', 'ortopedia')
-puts teacher.can_use_services?
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+end

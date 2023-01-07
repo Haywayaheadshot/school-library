@@ -1,14 +1,22 @@
 require './person'
 class Student < Person
-  def initialize(age, name, parent_permision, classroom)
-    super(age, name, parent_permision)
+  attr_reader :classroom
+
+  def initialize(age, classroom, name: 'Unknown', parent_permission: true)
+    super(age, name: name, parent_permission: parent_permission)
     @classroom = classroom
+  end
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 
   def play_hooky
     '¯(ツ)/¯'
   end
-end
 
-student = Student.new(15, 'jose', false, 'A')
-puts student.play_hooky
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+end
