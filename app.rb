@@ -101,7 +101,7 @@ class App
       print 'ID of person: '
       id_selected = gets.chomp.to_i
       Rental.all.each do |rental|
-        if rental.person.id = id_selected
+        if rental.person.id == id_selected
           puts %(#{rental.date}, Book "#{rental.book.title}" by #{rental.book.author}, rented by #{rental.person.name})
         else
           puts 'There\'s no rental with that ID'
