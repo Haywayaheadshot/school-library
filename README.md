@@ -134,6 +134,12 @@ Example command:
 - GitHub: [@Haywayaheadshot](https://github.com/Haywayaheadshot)
 - Twitter: [@haywayalive](https://twitter.com/haywayalive)
 - LinkedIn: [Abubakar Ummar](https://www.linkedin.com/in/abubakar-ummar/)
+
+👤 **LUCAS BERMUDEZ**
+
+- GitHub: [@oklukeok](https://github.com/Haywayaheadshot)
+- Twitter: [@ok_lukee](https://twitter.com/ok_lukee)
+- LinkedIn: [Abubakar Ummar](https://www.linkedin.com/in/lucas-bermudez/)
   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
