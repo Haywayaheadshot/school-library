@@ -1,3 +1,5 @@
+require './storage'
+
 module ListAllBooks
   def list_all_books
     puts 'There\'s no books added yet!' if Book.all.empty?
