@@ -1,12 +1,11 @@
 class Rental
-  attr_accessor :date, :book, :person
+  attr_accessor :date, :book, :person, :id
 
   def initialize(date, book, person)
+    @id = Random.rand(1..1000)
     @date = date
-    @book = book
     @person = person
-    person.rental << self
-    book.rental << self
+    @book = book
   end
 
   def self.all
