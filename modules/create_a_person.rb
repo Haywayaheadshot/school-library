@@ -17,14 +17,15 @@ module CreateAPerson
         print 'Do they have parent permission? [Y/N]: '
         permission = gets.chomp
         student = Student.new(age, classroom, name: name, parent_permission: permission)
-        @student_arr.push({ 'age' => student.age, 'classroom' => student.classroom, 'name' => name,
-                            'parent_permission' => permission })
+        @people_arr.push({ 'age' => student.age, 'classroom' => student.classroom, 'name' => name,
+                           'parent_permission' => permission, 'id' => student.id })
         puts 'Student created successfully!'
       when 2
         print 'Specialization: '
         specialization = gets.chomp
         teacher = Teacher.new(age, specialization, name: name)
-        @teacher_arr.push({ 'age' => teacher.age, 'specialization' => teacher.specialization, 'name' => name })
+        @people_arr.push({ 'age' => teacher.age, 'specialization' => teacher.specialization, 'name' => name,
+                           'id' => teacher.id })
         puts 'Teacher created!'
       end
     else
