@@ -1,11 +1,18 @@
 module ListAllPeople
   def list_all_people
-    puts 'There\'s no people added yet' if Student.all.empty? && Teacher.all.empty?
-    Student.all.each do |student|
-      puts %([Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age})
+    stored_student_data = Storage.load_data('student')
+    stored_teacher_data = Storage.load_data('teacher')
+
+    puts 'There\'s no people added yet' if stored_student_data.empty? && stored_teacher_data.empty?
+    if stored_student_data.length >= 1
+      stored_student_data.each do |student|
+        puts %([Student] Name: #{student['name']}, Age: #{student['age']})
+      end
     end
-    Teacher.all.each do |teacher|
-      puts %([Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age})
+    return unless stored_teacher_data.length >= 1
+
+    stored_teacher_data.each do |teacher|
+      puts %([Teacher] Name: #{teacher['name']}, Age: #{teacher['age']})
     end
   end
 end
