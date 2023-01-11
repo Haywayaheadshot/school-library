@@ -14,12 +14,14 @@ require './modules/exit_app'
 require 'pry'
 
 class App
-  attr_accessor :books_arr, :student_arr, :teacher_arr
+  attr_accessor :books_arr, :people_arr, :rentals_arr
 
   def initialize
     @books_arr = []
-    @student_arr = []
-    @teacher_arr = []
+    # @student_arr = []
+    # @teacher_arr = []
+    @people_arr = []
+    @rentals_arr = []
   end
 
   include OnStart
