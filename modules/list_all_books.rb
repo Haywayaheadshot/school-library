@@ -3,14 +3,20 @@ require 'pry'
 
 module ListAllBooks
   def list_all_books
-    # binding.pry
-    # Storage.load_data('books')
-    puts 'There\'s no books added yet!' if Storage.load_data('books').empty?
-    Storage.load_data('books').map do |char, _value|
-      # char.each { |prop, value|
-      #   puts prop.value
-      # }
-      puts char
+    stored_data = Storage.load_data('books')
+
+    puts 'There\'s no books added yet!' if @books_arr.empty? && stored_data.empty?
+
+    if @books_arr.length >= 1
+      @books_arr.each do |book|
+        puts "Title: #{book['title']} Author: #{book['author']}"
+      end
+    end
+
+    return unless stored_data.length >= 1
+
+    stored_data.each do |data|
+      puts "Title: #{data['title']} Author: #{data['author']}"
     end
   end
 end
