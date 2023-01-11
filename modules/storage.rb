@@ -2,7 +2,7 @@ class Storage
   @file_extention = 'json'
   @base_url = './storage/'
 
-  def self.save_date(class_name, object)
+  def self.save_data(class_name, object)
     File.write("#{@base_url}#{class_name}.#{@file_extention}", JSON.generate(object).to_s)
   end
 
