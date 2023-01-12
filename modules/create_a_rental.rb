@@ -17,9 +17,14 @@ module CreateARental
       puts 'Date: '
       date = gets.chomp
       rental = Rental.new(date,
-                          { 'title' => @books_arr[chosen_book]['title'], 'author' => @books_arr[chosen_book]['author'] }, { 'person' => @people_arr[selected_person]['id'], 'name' => @people_arr[selected_person]['name'] })
+                          { 'title' => @books_arr[chosen_book]['title'],
+                            'author' => @books_arr[chosen_book]['author'] },
+                          { 'person' => @people_arr[selected_person]['id'],
+                            'name' => @people_arr[selected_person]['name'] })
       @rentals_arr.push({ 'id' => rental.id, 'date' => date, 'person' => rental.person['person'],
-                          'title' => rental.book['title'], 'author' => rental.book['author'], 'name' => rental.person['name'] })
+                          'title' => rental.book['title'],
+                          'author' => rental.book['author'],
+                          'name' => rental.person['name'] })
       # binding.pry
       puts 'Rental created succesfully'
     end
