@@ -15,5 +15,9 @@ describe Teacher do
     it 'check for an instance of teacher specialization' do
       expect(new_teacher.specialization).to eql('English')
     end
+
+    it 'check for an instance of teacher can use service' do
+      expect(new_teacher.can_use_services?).to eql(true)
+    end
   end
 end
