@@ -4,7 +4,6 @@ require './book'
 describe Person do
   context 'check for correct values passed through person class ' do
     new_person = Person.new(16, name: 'Hector', parent_permission: true)
-    # new_person2 = Person.new(16, "Obiwan")
     it 'check for an instance of person age' do
       expect(new_person.age).to eql(16)
     end
