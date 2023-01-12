@@ -10,8 +10,20 @@ require './modules/create_a_person'
 require './modules/create_a_book'
 require './modules/create_a_rental'
 require './modules/list_all_rentals'
+require './modules/exit_app'
+require 'pry'
 
 class App
+  attr_accessor :books_arr, :people_arr, :rentals_arr
+
+  def initialize
+    @books_arr = []
+    # @student_arr = []
+    # @teacher_arr = []
+    @people_arr = []
+    @rentals_arr = []
+  end
+
   include OnStart
   include ListAllBooks
   include ListAllPeople
@@ -19,4 +31,5 @@ class App
   include CreateABook
   include CreateARental
   include ListAllRentals
+  include ExitApp
 end

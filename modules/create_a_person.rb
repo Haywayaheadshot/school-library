@@ -1,3 +1,6 @@
+require './modules/storage'
+require 'pry'
+
 module CreateAPerson
   def create_a_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
@@ -13,12 +16,16 @@ module CreateAPerson
         classroom = gets.chomp
         print 'Do they have parent permission? [Y/N]: '
         permission = gets.chomp
-        Student.new(age, classroom, name: name, parent_permission: permission)
+        student = Student.new(age, classroom, name: name, parent_permission: permission)
+        @people_arr.push({ 'age' => student.age, 'classroom' => student.classroom, 'name' => name,
+                           'parent_permission' => permission, 'id' => student.id })
         puts 'Student created successfully!'
       when 2
         print 'Specialization: '
         specialization = gets.chomp
-        Teacher.new(age, specialization, name: name)
+        teacher = Teacher.new(age, specialization, name: name)
+        @people_arr.push({ 'age' => teacher.age, 'specialization' => teacher.specialization, 'name' => name,
+                           'id' => teacher.id })
         puts 'Teacher created!'
       end
     else

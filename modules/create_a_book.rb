@@ -4,7 +4,8 @@ module CreateABook
     title = gets.chomp
     print 'Author: '
     author = gets.chomp
-    Book.new(title, author)
+    book = Book.new(title, author)
+    @books_arr.push({ 'title' => book.title, 'author' => book.author })
     puts 'Book succesfully created!'
   end
 end

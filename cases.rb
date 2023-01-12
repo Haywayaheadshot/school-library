@@ -1,10 +1,12 @@
 require './app'
-class Cases
+
+class Cases < App
   puts '--------------------------------------------------'
   puts 'Welcome to my library! ͡° ͜ʖ ͡°'
 
   def initialize()
     @app = App.new
+    super()
   end
 
   def on_start
@@ -21,7 +23,7 @@ class Cases
       4 => 'create_a_book',
       5 => 'create_a_rental',
       6 => 'list_all_rentals',
-      7 => 'exit'
+      7 => 'exit_app'
     }
 
     case par
@@ -29,7 +31,7 @@ class Cases
       @app.send(@user_pick[par])
       on_start
     when 7
-      puts 'Thanks for using my library!'
+      @app.send(@user_pick[par])
     else
       puts 'Option doesn\'t exist ¯\_(ﾟ～ﾟ)_/¯, select another one!'
       on_start

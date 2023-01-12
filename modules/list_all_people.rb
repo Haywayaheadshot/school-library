@@ -1,11 +1,26 @@
 module ListAllPeople
   def list_all_people
-    puts 'There\'s no people added yet' if Student.all.empty? && Teacher.all.empty?
-    Student.all.each do |student|
-      puts %([Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age})
-    end
-    Teacher.all.each do |teacher|
-      puts %([Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age})
+    stored_people_data = Storage.load_data('people')
+    if @people_arr.empty? && stored_people_data.empty?
+      puts 'There\'s no people added yet'
+    elsif @people_arr.length >= 1
+      @people_arr.each do |person|
+        if person.key?('specialization')
+          puts %([Teacher] Name: #{person['name']}, ID: #{person['id']},
+          Age: #{person['age']}, Specialization: #{person['specialization']})
+        else
+          puts %([Student] Name: #{person['name']}, ID: #{person['id']} Age: #{person['age']})
+        end
+      end
+    else
+      stored_people_data.each do |person|
+        if person.key?('specialization')
+          puts %([Teacher] Name: #{person['name']}, ID: #{person['id']},
+          Age: #{person['age']}, Specialization: #{person['specialization']})
+        else
+          puts %([Student] Name: #{person['name']}, ID: #{person['id']} Age: #{person['age']})
+        end
+      end
     end
   end
 end
