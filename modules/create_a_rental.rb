@@ -1,5 +1,3 @@
-require 'pry'
-
 module CreateARental
   def create_a_rental
     if @people_arr.empty? || @books_arr.empty?

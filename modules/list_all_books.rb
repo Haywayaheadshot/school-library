@@ -1,5 +1,4 @@
 require './modules/storage'
-require 'pry'
 
 module ListAllBooks
   def list_all_books

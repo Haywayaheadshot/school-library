@@ -90,14 +90,7 @@ Example commands:
 
 Open the cloned directory on Vscode
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
+install gems(if exist)
 
 ### Usage
 
@@ -115,13 +108,7 @@ Example command:
 
 In the school-library file Call any of the method and pass in arguments to initialize students, teachers and persons depending on which method is called and right click then select run to execute the program
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+run "rspec spec spec/books_spec.rb"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

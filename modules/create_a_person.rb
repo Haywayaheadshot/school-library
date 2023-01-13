@@ -1,5 +1,4 @@
 require './modules/storage'
-require 'pry'
 
 module CreateAPerson
   def create_a_person
