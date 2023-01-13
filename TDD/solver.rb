@@ -1,6 +1,6 @@
 class Solver
   def factorial(num)
-    return 'The number its negative' if num.negative?
+    return 'The number is a negative number' if num.negative?
     return 1 unless num.positive?
 
     num * factorial(num - 1)
